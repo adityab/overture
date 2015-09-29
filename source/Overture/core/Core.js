@@ -81,10 +81,10 @@ if ( typeof O === 'undefined' ) {
                 x: 5,
                 y: function () {
                     return this.get( 'x' ) * 2;
-                }.property( 'x' ),
+                }.oProperty( 'x' ),
                 z: function () {
                     [...]
-                }.property( 'y' ),
+                }.oProperty( 'y' ),
                 onX: function () {
                     [...]
                 }.observes( 'x', 'z.a' )

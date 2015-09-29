@@ -95,7 +95,7 @@ var MenuButtonView = NS.Class({
     */
     isInMenu: function () {
         return this.get( 'parentView' ) instanceof NS.MenuOptionView;
-    }.property( 'parentView' ),
+    }.oProperty( 'parentView' ),
 
     // --- Accessibility ---
 

@@ -42,7 +42,7 @@ function overturePerf ( options ) {
         */
         isSelected: function () {
             return App.selectedItem === this;
-        }.property().nocache(),
+        }.oProperty().nocache(),
 
         /*  Display the item.
         */
@@ -96,7 +96,7 @@ function overturePerf ( options ) {
         */
         className: function() {
             return 'row' + ( this.get( 'isSelected' ) ? ' selected' : '' );
-        }.property( 'isSelected' ),
+        }.oProperty( 'isSelected' ),
 
         draw: DataItemView.prototype.draw,
 
@@ -137,7 +137,7 @@ function overturePerf ( options ) {
         */
         visibleRect: function () {
             return this.getFromPath( 'parentView.visibleRect' );
-        }.property( 'parentView.visibleRect' )
+        }.oProperty( 'parentView.visibleRect' )
     });
 
     /*  Create the top level view.
@@ -231,7 +231,7 @@ var ScrollingRootView = O.Class({
 
     pxHeight: function () {
         return window.innerHeight;
-    }.property(),
+    }.oProperty(),
 
     _onScroll: function ( event ) {
         var layer = this.get( 'layer' ),

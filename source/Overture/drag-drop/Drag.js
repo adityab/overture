@@ -338,7 +338,7 @@ var Drag = NS.Class({
             }
         }
         return [];
-    }.property(),
+    }.oProperty(),
 
     /**
         Method: O.Drag#hasDataType

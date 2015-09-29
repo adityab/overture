@@ -39,7 +39,7 @@ var CheckboxView = NS.Class({
             ( this.get( 'value' ) ? 'is-checked' : 'is-unchecked' ) +
             ( this.get( 'isDisabled' ) ? ' is-disabled' : '' ) +
             ( type ? ' ' + type : '' );
-    }.property( 'type', 'value', 'isDisabled' ),
+    }.oProperty( 'type', 'value', 'isDisabled' ),
 
     /**
         Method: O.CheckboxView#draw

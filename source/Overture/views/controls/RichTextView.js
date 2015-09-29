@@ -28,7 +28,7 @@ var queryCommandState = function ( tag, regexp ) {
         return path === '(selection)' ?
             this.get( 'editor' )
                 .hasFormat( tag ) : ( regexp ).test( path );
-    }.property( 'path' );
+    }.oProperty( 'path' );
 };
 
 var emailRegExp = RegExp.email,
@@ -74,7 +74,7 @@ var RichTextView = NS.Class({
             }
         }
         return html;
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     // --- Render ---
 
@@ -121,7 +121,7 @@ var RichTextView = NS.Class({
         return 'v-RichText' +
             ( NS.UA.isIOS ? ' v-RichText--iOS' : '' ) +
             ( this.get( 'showToolbar' ) ? '' : ' v-RichText--noToolbar' );
-    }.property(),
+    }.oProperty(),
 
     draw: function ( layer, Element, el ) {
         var richTextView = this;
@@ -535,7 +535,7 @@ var RichTextView = NS.Class({
                 }
             })
         }).registerConfig( 'standard', this.get( 'toolbarConfig' ) );
-    }.property(),
+    }.oProperty(),
 
     fontSizeMenuView: function () {
         var richTextView = this;
@@ -559,7 +559,7 @@ var RichTextView = NS.Class({
                 });
             })
         });
-    }.property(),
+    }.oProperty(),
 
     showFontSizeMenu: function ( buttonView ) {
         // If we're in the overflow menu, align with the "More" button.
@@ -601,7 +601,7 @@ var RichTextView = NS.Class({
                 });
             })
         });
-    }.property(),
+    }.oProperty(),
 
     showFontFaceMenu: function ( buttonView ) {
         // If we're in the overflow menu, align with the "More" button.
@@ -652,7 +652,7 @@ var RichTextView = NS.Class({
                     });
                 })
         });
-    }.property(),
+    }.oProperty(),
 
     showTextColourMenu: function ( buttonView ) {
         this._colourText = true;
@@ -754,7 +754,7 @@ var RichTextView = NS.Class({
                 richTextView.focus();
             }
         });
-    }.property(),
+    }.oProperty(),
 
     showLinkOverlay: function ( buttonView ) {
         var view = this.get( 'linkOverlayView' ),
@@ -930,7 +930,7 @@ var RichTextView = NS.Class({
             alignment = results ? results[1] : 'left';
         }
         return alignment;
-    }.property( 'path' ),
+    }.oProperty( 'path' ),
 
     direction: function () {
         var path = this.get( 'path' ),
@@ -951,7 +951,7 @@ var RichTextView = NS.Class({
             dir = results ? results[1] : 'ltr';
         }
         return dir;
-    }.property( 'path' ),
+    }.oProperty( 'path' ),
 
     isUnorderedList: queryCommandState( 'UL', ( />UL\b/ ) ),
     isOrderedList: queryCommandState( 'OL', ( />OL\b/ ) ),

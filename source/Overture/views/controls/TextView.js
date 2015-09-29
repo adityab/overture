@@ -172,7 +172,7 @@ var TextView = NS.Class({
             start: start,
             end: end
         };
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     /**
         Property: O.TextView#blurOnEscape
@@ -224,7 +224,7 @@ var TextView = NS.Class({
             ( this.get( 'isValid' ) ? '' : ' is-invalid' ) +
             ( this.get( 'isDisabled' ) ? ' is-disabled' : '' ) +
             ( type ? ' ' + type : '' );
-    }.property( 'type', 'isHighlighted',
+    }.oProperty( 'type', 'isHighlighted',
         'isFocussed', 'isValid', 'isDisabled' ),
 
     layerStyles: function () {
@@ -234,7 +234,7 @@ var TextView = NS.Class({
             cursor: 'text',
             userSelect: 'text'
         }, this.get( 'layout' ) );
-    }.property( 'layout', 'positioning' ),
+    }.oProperty( 'layout', 'positioning' ),
 
     /**
         Method: O.TextView#draw

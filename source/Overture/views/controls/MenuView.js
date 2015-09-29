@@ -168,11 +168,11 @@ var MenuOptionView = NS.Class({
     isHidden: false,
     isDisabled: function () {
         return this.getFromPath( 'button.isDisabled' );
-    }.property( 'button.isDisabled' ),
+    }.oProperty( 'button.isDisabled' ),
     isFocussed: false,
     isFocussable: function () {
         return !this.get( 'isHidden' ) && !this.get( 'isDisabled' );
-    }.property( 'isHidden', 'isDisabled' ),
+    }.oProperty( 'isHidden', 'isDisabled' ),
 
     layerTag: 'li',
 
@@ -180,7 +180,7 @@ var MenuOptionView = NS.Class({
         return 'v-MenuOption' +
             ( this.get( 'isFocussed' ) ? ' is-focussed' : '' ) +
             ( this.get( 'isHidden' ) ? ' u-hidden' : '' );
-    }.property( 'isFocussed', 'isHidden' ),
+    }.oProperty( 'isFocussed', 'isHidden' ),
 
     init: function ( view, controller ) {
         this.childViews = [ view ];
@@ -325,13 +325,13 @@ var MenuView = NS.Class({
 
     nextEventTarget: function () {
         return this.get( 'controller' );
-    }.property( 'controller' ),
+    }.oProperty( 'controller' ),
 
     controller: function () {
         return new MenuController({
             view: this
         });
-    }.property(),
+    }.oProperty(),
 
     ItemView: MenuOptionView,
 

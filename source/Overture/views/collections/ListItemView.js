@@ -52,7 +52,7 @@ var ListItemView = NS.Class({
         return {
             top: index * itemHeight
         };
-    }).property( 'index', 'itemHeight' ),
+    }).oProperty( 'index', 'itemHeight' ),
 
     resetLayout: function () {
         if ( this.get( 'animateIn' ) ) {

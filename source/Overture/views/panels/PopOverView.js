@@ -321,12 +321,12 @@ var PopOverView = NS.Class({
 
     subPopOverView: function () {
         return new NS.PopOverView({ parentPopOverView: this });
-    }.property(),
+    }.oProperty(),
 
     eventHandler: function () {
         return this.get( 'parentPopOverView' ) ?
             null : new NS.ModalEventHandler({ view: this });
-    }.property(),
+    }.oProperty(),
 
     clickedOutside: function () {
         this.hide();

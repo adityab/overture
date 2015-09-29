@@ -74,7 +74,7 @@ var SelectionController = NS.Class({
 
     selectedIds: function () {
         return Object.keys( this._selectedIds );
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     isIdSelected: function ( id ) {
         return !!this._selectedIds[ id ];

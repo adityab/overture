@@ -87,7 +87,7 @@ var ObservableArray = NS.Class({
             }
         }
         return this._array.slice();
-    }.property(),
+    }.oProperty(),
 
     /**
         Method: O.ObservableArray#getObjectAt
@@ -121,7 +121,7 @@ var ObservableArray = NS.Class({
             length = value;
         }
         return length;
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     /**
         Method: O.ObservableArray#setObjectAt

@@ -42,7 +42,7 @@ var OverflowMenuView = NS.Class({
             }
             return acc;
         }, {} ) : {};
-    }.property( 'menuView' ),
+    }.oProperty( 'menuView' ),
 
     setShortcuts: function ( _, __, oldShortcuts, shortcuts ) {
         if ( this.get( 'isInDocument' ) ) {
@@ -140,13 +140,13 @@ var ToolbarView = NS.Class({
         var configs = this._configs,
             config = configs[ this.get( 'config' ) ];
         return ( config && config.left ) || configs.standard.left;
-    }.property( 'config' ),
+    }.oProperty( 'config' ),
 
     rightConfig: function () {
         var configs = this._configs,
             config = configs[ this.get( 'config' ) ];
         return ( config && config.right ) || configs.standard.right;
-    }.property( 'config' ),
+    }.oProperty( 'config' ),
 
     left: function () {
         var leftConfig = this.get( 'leftConfig' ),
@@ -195,11 +195,11 @@ var ToolbarView = NS.Class({
             }
         }
         return leftConfig.map( toView, this );
-    }.property( 'leftConfig', 'rightConfig', 'pxWidth' ),
+    }.oProperty( 'leftConfig', 'rightConfig', 'pxWidth' ),
 
     right: function () {
         return this.get( 'rightConfig' ).map( toView, this );
-    }.property( 'rightConfig' ),
+    }.oProperty( 'rightConfig' ),
 
     preMeasure: function () {
         this.insertView( this._measureView =

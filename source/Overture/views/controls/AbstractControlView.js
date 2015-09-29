@@ -104,7 +104,7 @@ var AbstractControlView = NS.Class({
                     .map( NS.formatKeyForPlatform )
                     .join( ' ' + NS.loc( 'or' ) + ' ' )
             ) : '';
-    }.property( 'shortcut' ),
+    }.oProperty( 'shortcut' ),
 
     /**
         Method: O.AbstractControlView#didEnterDocument

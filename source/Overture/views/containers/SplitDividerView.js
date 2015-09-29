@@ -111,7 +111,7 @@ var SplitDividerView = NS.Class({
             isVertical = this.get( 'direction' ) === VERTICAL;
         return isVertical ?
             ( flexTL ? 'right' : 'left' ) : ( flexTL ? 'bottom' : 'top' );
-    }.property( 'flex', 'direction' ),
+    }.oProperty( 'flex', 'direction' ),
 
     /**
         Property: O.SplitDividerView#positioning
@@ -148,7 +148,7 @@ var SplitDividerView = NS.Class({
         styles[ this.get( 'anchor' ) ] =
             this.get( 'offset' ) - ( thickness / 2 );
         return styles;
-    }.property( 'direction', 'anchor', 'thickness', 'offset' ),
+    }.oProperty( 'direction', 'anchor', 'thickness', 'offset' ),
 
     /**
         Method: O.SplitDividerView#dragStarted

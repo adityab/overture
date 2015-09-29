@@ -87,7 +87,7 @@ var SwitchView = NS.Class({
 
     layer: function () {
         return document.createComment( 'SwitchView ' + this.get( 'id' ) );
-    }.property(),
+    }.oProperty(),
 
     willEnterDocument: function () {
         this.resumeBindings();

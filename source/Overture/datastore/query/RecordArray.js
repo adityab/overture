@@ -41,7 +41,7 @@ var RecordArray = NS.Class({
     */
     length: function () {
         return this.get( 'storeKeys' ).length;
-    }.property( 'storeKeys' ),
+    }.oProperty( 'storeKeys' ),
 
     /**
         Method: O.RecordArray#getObjectAt

@@ -148,7 +148,7 @@ var ButtonView = NS.Class({
             ( this.get( 'shortcut' ) ? ' v-Button--hasShortcut' : '' ) +
             ( this.get( 'isActive' ) ? ' is-active' : '' ) +
             ( this.get( 'isDisabled' ) ? ' is-disabled' : '' );
-    }.property( 'type', 'icon', 'shortcut', 'isActive', 'isDisabled' ),
+    }.oProperty( 'type', 'icon', 'shortcut', 'isActive', 'isDisabled' ),
 
     /**
         Method: O.ButtonView#draw

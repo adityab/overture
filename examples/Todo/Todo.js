@@ -371,7 +371,7 @@ App.state = new O.Router({
     */
     list: function () {
         return App.store.getRecord( TodoList, this.get( 'listId' ) );
-    }.property( 'listId' ),
+    }.oProperty( 'listId' ),
 
     /* An observable collection of Todo instances that belong to the currently
        selected TodoList and match any search.
@@ -404,7 +404,7 @@ App.state = new O.Router({
             },
             filter: filter
         });
-    }.property( 'listId', 'search' ),
+    }.oProperty( 'listId', 'search' ),
 
     /* Destroy the previous LiveQuery, as it's no longer needed. In the current
        implementation we're not reusing queries, so we should always destroy
@@ -463,7 +463,7 @@ App.state = new O.Router({
         var appName = 'Overture Todo Example';
         var listName = this.getFromPath( 'list.name' );
         return listName ? listName + ' – ' + appName : appName;
-    }.property( 'list' ),
+    }.oProperty( 'list' ),
 
     // URL routing (state encoding/decoding)
 
@@ -476,7 +476,7 @@ App.state = new O.Router({
     */
     encodedState: function () {
         return this.get( 'listId' ) + '/';
-    }.property( 'listId' ),
+    }.oProperty( 'listId' ),
 
     /* Routes are simply a regexp to match against the URL (after any base part)
        and then a function to use to restore the state from that URL.
@@ -682,7 +682,7 @@ var TodoView = O.Class({
             ( this.get( 'isComplete' ) ? ' is-complete' : '' ) +
             ( this.get( 'isSelected' ) ? ' is-selected' : '' ) +
             ( this.get( 'isEditing' )  ? ' is-editing'  : '' );
-    }.property('isComplete', 'isSelected', 'isEditing' ),
+    }.oProperty('isComplete', 'isSelected', 'isEditing' ),
 
     /* Position the view absolutely to make it easy to animate.
     */
@@ -699,7 +699,7 @@ var TodoView = O.Class({
             zIndex: this.get( 'isDragging' ) ? '1' : 'auto',
             transform: 'translate3d(0,' + y + 'px,0)'
         };
-    }.property( 'isDragging' ),
+    }.oProperty( 'isDragging' ),
 
     /* We would normally make index one of the computed property dependencies
        of layout, but because we don't want it to reset while dragging, we

@@ -26,7 +26,7 @@ var view = new O.View({
         } catch ( e ) {}
 
         return result;
-    }.property( 'string', 'arg1', 'arg2', 'arg3' ),
+    }.oProperty( 'string', 'arg1', 'arg2', 'arg3' ),
 
     draw: function ( layer, Element, el ) {
         return [

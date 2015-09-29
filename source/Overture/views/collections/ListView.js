@@ -91,7 +91,7 @@ var ListView = NS.Class({
         return itemHeight ? {
             height: itemHeight * ( this.get( 'contentLength' ) || 0 )
         } : {};
-    }.property( 'itemHeight', 'contentLength' ),
+    }.oProperty( 'itemHeight', 'contentLength' ),
 
     draw: function ( layer, Element/*, el*/ ) {
         // Render any unmanaged child views first.

@@ -50,7 +50,7 @@ var userSelectNone =
             className: function () {
                 return 'v-Message' +
                     ( this.get( 'isImportant' ) ? ' is-important' : '' );
-            }.property( 'isImportant' ),
+            }.oProperty( 'isImportant' ),
             draw: function ( layer, Element, el ) {
                 return [
                     el( 'h1#title', {
@@ -294,7 +294,7 @@ var View = NS.Class({
         });
         this.didCreateLayer( layer );
         return layer;
-    }.property(),
+    }.oProperty(),
 
     /**
         Method: O.View#didCreateLayer
@@ -428,7 +428,7 @@ var View = NS.Class({
     */
     nextEventTarget: function () {
         return this.get( 'parentView' );
-    }.property( 'parentView' ),
+    }.oProperty( 'parentView' ),
 
     /**
         Method: O.View#handleEvent
@@ -520,7 +520,7 @@ var View = NS.Class({
             cursor: allowTextSelection ? 'auto' : undefined,
             userSelect: allowTextSelection ? 'text' : userSelectNone
         }, this.get( 'layout' ) );
-    }.property( 'layout', 'allowTextSelection', 'positioning' ),
+    }.oProperty( 'layout', 'allowTextSelection', 'positioning' ),
 
     /**
         Method: O.View#render
@@ -761,7 +761,7 @@ var View = NS.Class({
             width: this.get( 'pxWidth' ),
             height: this.get( 'pxHeight' )
         };
-    }.property(),
+    }.oProperty(),
 
     /**
         Property: O.View#pxTop
@@ -786,7 +786,7 @@ var View = NS.Class({
             offset += layer.offsetTop;
         } while ( layer && ( layer = layer.offsetParent ) !== parent );
         return offset;
-    }.property( 'pxLayout' ),
+    }.oProperty( 'pxLayout' ),
 
     /**
         Property: O.View#pxLeft
@@ -811,7 +811,7 @@ var View = NS.Class({
             offset += layer.offsetLeft;
         } while ( layer && ( layer = layer.offsetParent ) !== parent );
         return offset;
-    }.property( 'pxLayout' ),
+    }.oProperty( 'pxLayout' ),
 
     /**
         Property: O.View#pxWidth
@@ -822,7 +822,7 @@ var View = NS.Class({
     pxWidth: function () {
         return this.get( 'isInDocument' ) ?
             this.get( 'layer' ).offsetWidth : 0;
-    }.property( 'pxLayout' ),
+    }.oProperty( 'pxLayout' ),
 
     /**
         Property: O.View#pxHeight
@@ -833,7 +833,7 @@ var View = NS.Class({
     pxHeight: function () {
         return this.get( 'isInDocument' ) ?
             this.get( 'layer' ).offsetHeight : 0;
-    }.property( 'pxLayout' ),
+    }.oProperty( 'pxLayout' ),
 
     /**
         Property: O.View#visibleRect
@@ -854,7 +854,7 @@ var View = NS.Class({
             width: this.get( 'pxWidth' ),
             height: this.get( 'pxHeight' )
         };
-    }.property( 'scrollLeft', 'scrollTop', 'pxLayout' ),
+    }.oProperty( 'scrollLeft', 'scrollTop', 'pxLayout' ),
 
     /**
         Method: O.View#getPositionRelativeTo

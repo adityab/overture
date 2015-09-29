@@ -107,7 +107,7 @@ var teardownComputed = function ( metadata, key ) {
 
 Function.implement({
     /**
-        Method: Function#property
+        Method: Function#oProperty
 
         Marks a function as a property getter/setter. If a call to
         <O.ComputedProps#get> or <O.ComputedProps#set> is made and the
@@ -128,7 +128,7 @@ Function.implement({
         Returns:
             {Function} Returns self.
     */
-    property: function () {
+    oProperty: function () {
         this.isProperty = true;
         if ( arguments.length ) {
             this.dependencies = slice.call( arguments );

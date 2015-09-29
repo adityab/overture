@@ -45,7 +45,7 @@ var LiveQuery = NS.Class({
     */
     id: function () {
         return NS.guid( this );
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     /**
         Property (private): O.LiveQuery#_filter
@@ -169,7 +169,7 @@ var LiveQuery = NS.Class({
         return this._storeKeys.map( function ( storeKey ) {
             return store.materialiseRecord( storeKey, Type );
         });
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     /**
         Property: O.LiveQuery#length

@@ -49,7 +49,7 @@ var ListKBFocusView = NS.Class({
             top: itemHeight * index,
             height: index < 0 ? 0 : itemHeight
         };
-    }.property( 'itemHeight', 'index', 'record' ),
+    }.oProperty( 'itemHeight', 'index', 'record' ),
 
     didEnterDocument: function () {
         var keys = this.get( 'keys' ),
@@ -101,7 +101,7 @@ var ListKBFocusView = NS.Class({
             if ( below > 0 ) { return below; }
         }
         return 0;
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     scrollIntoView: function ( offset, withAnimation ) {
         var scrollView = this.getParent( NS.ScrollView );

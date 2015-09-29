@@ -206,7 +206,7 @@ var Record = NS.Class({
         return storeKey ?
             this.get( 'store' ).getStatus( storeKey ) :
             READY_NEW_DIRTY;
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     /**
         Method: O.Record#is
@@ -273,7 +273,7 @@ var Record = NS.Class({
         return storeKey ?
             this.get( 'store' ).getIdFromStoreKey( storeKey ) :
             this.get( this.constructor.primaryKey );
-    }.property(),
+    }.oProperty(),
 
     toJSON: function () {
         return this.get( 'storeKey' );
@@ -465,7 +465,7 @@ var Record = NS.Class({
     isValid: function ( value ) {
         return ( value !== undefined ) ? value :
             !this.get( 'errorForAttribute' ).get( 'errorCount' );
-    }.property(),
+    }.oProperty(),
 
     /**
         Method: O.Record#errorToSet
@@ -498,7 +498,7 @@ var Record = NS.Class({
     */
     errorForAttribute: function () {
         return new AttributeErrors( this );
-    }.property()
+    }.oProperty()
 });
 
 /**

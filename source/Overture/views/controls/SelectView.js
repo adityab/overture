@@ -54,7 +54,7 @@ var SelectView = NS.Class({
             ( this.get( 'isFocussed' ) ? ' is-focussed' : '' ) +
             ( this.get( 'isDisabled' ) ? ' is-disabled' : '' ) +
             ( type ? ' ' + type : '' );
-    }.property( 'type', 'isFocussed', 'isDisabled' ),
+    }.oProperty( 'type', 'isFocussed', 'isDisabled' ),
 
     /**
         Method: O.SelectView#draw

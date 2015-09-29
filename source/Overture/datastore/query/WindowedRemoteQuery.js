@@ -274,7 +274,7 @@ var WindowedRemoteQuery = NS.Class({
         var length = this.get( 'length' );
         return ( length === null ) ? length :
             Math.floor( ( length - 1 ) / this.get( 'windowSize' ) ) + 1;
-    }.property( 'length' ),
+    }.oProperty( 'length' ),
 
     /**
         Property: O.WindowedRemoteQuery#triggerPoint

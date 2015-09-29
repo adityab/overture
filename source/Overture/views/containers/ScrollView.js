@@ -108,7 +108,7 @@ var ScrollView = NS.Class({
         styles.overflowY = this.get( 'showScrollbarY' ) ? 'auto' : 'hidden';
         styles.WebkitOverflowScrolling = 'touch';
         return styles;
-    }.property( 'layout', 'allowTextSelection', 'positioning',
+    }.oProperty( 'layout', 'allowTextSelection', 'positioning',
         'showScrollbarX', 'showScrollbarY' ),
 
     /**
@@ -190,7 +190,7 @@ var ScrollView = NS.Class({
         return new ScrollAnimation({
             object: this
         });
-    }.property(),
+    }.oProperty(),
 
     /**
         Method: O.ScrollView#scrollPage
@@ -380,7 +380,7 @@ if ( NS.UA.isIOS ) {
         isFixedDimensions: function () {
             var positioning = this.get( 'positioning' );
             return positioning === 'absolute' || positioning === 'fixed';
-        }.property( 'positioning' ),
+        }.oProperty( 'positioning' ),
 
         draw: function ( layer, Element, el ) {
             var isFixedDimensions = this.get( 'isFixedDimensions' ),

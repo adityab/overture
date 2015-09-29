@@ -92,7 +92,7 @@ NS.AnimatableView = {
             object: this,
             element: this.get( 'layer' )
         });
-    }.property(),
+    }.oProperty(),
 
     /**
         Method: O.AnimatableView#redrawLayerStyles

@@ -69,7 +69,7 @@ var RemoteQuery = NS.Class({
 
     id: function () {
         return NS.guid( this );
-    }.property().nocache(),
+    }.oProperty().nocache(),
 
     /**
         Property: O.RemoteQuery#sort

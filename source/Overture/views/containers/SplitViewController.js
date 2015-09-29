@@ -101,7 +101,7 @@ var SplitViewController = NS.Class({
             height: flexDir === VERTICAL ? '100%' :
                 flexPane === TOP_LEFT ? auto : staticLength
         };
-    }.property( 'flex', 'direction', 'staticPaneLength' ),
+    }.oProperty( 'flex', 'direction', 'staticPaneLength' ),
 
     /**
         Property: O.SplitViewController#bottomRightLayout
@@ -125,7 +125,7 @@ var SplitViewController = NS.Class({
             height: flexDir === VERTICAL ? '100%' :
                 flexPane === BOTTOM_RIGHT ? auto : staticLength
         };
-    }.property( 'flex', 'direction', 'staticPaneLength' )
+    }.oProperty( 'flex', 'direction', 'staticPaneLength' )
 });
 
 SplitViewController.extend({
